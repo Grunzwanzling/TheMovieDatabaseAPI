@@ -15,7 +15,7 @@ public class Movie {
 		movie = content;
 	}
 
-	private String getString(String movie, String key) {
+	public String getString(String key) {
 
 		int start = movie.indexOf("\"" + key + "\"") + key.length() + 4;
 		int stop = movie.indexOf("\"", start);
@@ -23,7 +23,7 @@ public class Movie {
 
 	}
 
-	private int getInteger(String movie, String key) {
+	public int getInteger(String key) {
 
 		int start = movie.indexOf("\"" + key + "\"") + key.length() + 3;
 		int stop = movie.indexOf("\"", start);
