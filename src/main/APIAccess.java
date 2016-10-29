@@ -8,6 +8,7 @@ import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.HashMap;
 
+import objects.Movie;
 import essentials.Essentials;
 
 /**
