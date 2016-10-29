@@ -26,11 +26,16 @@ public class Demo {
 	 */
 	public static void main(String[] args) throws MalformedURLException,
 			IOException {
-		APIAccess api = new APIAccess("849e76d398ebbdd616b9801d3af65875"); //Connect to the API
-		
-		Movie m = api.getMovie("550"); //Get the Movie with id=550
-		
-		System.out.println(m.getString("title")); //Get the title of the movie
+		APIAccess api = new APIAccess("849e76d398ebbdd616b9801d3af65875"); // Connect
+																			// to
+																			// the
+																			// API
+
+		Movie m = api.getMovie("550"); // Get the Movie with id=550
+		System.out.println(m.getTitle());
+		System.out.println(m.getReleaseDate());
+		System.out.println(m.getStatus());
+		System.out.println(m.getString("title")); // Get the title of the movie
 
 	}
 
