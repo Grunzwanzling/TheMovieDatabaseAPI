@@ -21,14 +21,21 @@ public class APIAccess {
 
 	public APIAccess(String apiKey) {
 		this.apiKey = apiKey;
-		// TODO Auto-generated constructor stub
 	}
 
-	public Movie[] getNowPlayingMovies() throws MalformedURLException,
+	/**
+	 * 
+	 * @param pages
+	 *            The amo
+	 * @return
+	 * @throws MalformedURLException
+	 * @throws IOException
+	 */
+	public Movie[] getNowPlayingMovies(int pages) throws MalformedURLException,
 			IOException {
 		HashMap<Integer, String> map = new HashMap<Integer, String>();
 		int counter = 0;
-		for (int i = 1; i <= 1000; i++) {
+		for (int i = 1; i <= pages; i++) {
 			String result = Essentials.sendHTTPRequest(new URL(
 					"http://api.themoviedb.org/3/movie/now_playing?api_key="
 							+ apiKey + "&page=" + i));
@@ -57,10 +64,11 @@ public class APIAccess {
 		return movie;
 	}
 
-	public Movie[] getLatestMovies() throws MalformedURLException, IOException {
+	public Movie[] getLatestMovies(int pages) throws MalformedURLException,
+			IOException {
 		HashMap<Integer, String> map = new HashMap<Integer, String>();
 		int counter = 0;
-		for (int i = 1; i <= 1000; i++) {
+		for (int i = 1; i <= pages; i++) {
 			String result = Essentials.sendHTTPRequest(new URL(
 					"http://api.themoviedb.org/3/movie/latest?api_key="
 							+ apiKey + "&page=" + i));
@@ -89,10 +97,11 @@ public class APIAccess {
 		return movie;
 	}
 
-	public Movie[] getPopularMovies() throws MalformedURLException, IOException {
+	public Movie[] getPopularMovies(int pages) throws MalformedURLException,
+			IOException {
 		HashMap<Integer, String> map = new HashMap<Integer, String>();
 		int counter = 0;
-		for (int i = 1; i <= 1000; i++) {
+		for (int i = 1; i <= pages; i++) {
 			String result = Essentials.sendHTTPRequest(new URL(
 					"http://api.themoviedb.org/3/movie/popular?api_key="
 							+ apiKey + "&page=" + i));
@@ -121,11 +130,12 @@ public class APIAccess {
 		return movie;
 	}
 
-	public Movie[] getTopRatedMovies() throws MalformedURLException,
+	public Movie[] getTopRatedMovies(int pages) throws MalformedURLException,
 			IOException {
 		HashMap<Integer, String> map = new HashMap<Integer, String>();
 		int counter = 0;
-		for (int i = 1; i <= 1000; i++) {
+		for (int i = 1; i <= pages; i++) {
+
 			String result = Essentials.sendHTTPRequest(new URL(
 					"http://api.themoviedb.org/3/movie/top_rated?api_key="
 							+ apiKey + "&page=" + i));
@@ -154,11 +164,11 @@ public class APIAccess {
 		return movie;
 	}
 
-	public Movie[] getUpcomingMovies() throws MalformedURLException,
+	public Movie[] getUpcomingMovies(int pages) throws MalformedURLException,
 			IOException {
 		HashMap<Integer, String> map = new HashMap<Integer, String>();
 		int counter = 0;
-		for (int i = 1; i <= 1000; i++) {
+		for (int i = 1; i <= pages; i++) {
 			String result = Essentials.sendHTTPRequest(new URL(
 					"http://api.themoviedb.org/3/movie/upcoming?api_key="
 							+ apiKey + "&page=" + i));

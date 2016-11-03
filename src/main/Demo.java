@@ -36,17 +36,22 @@ public class Demo {
 																			// the
 																			// API
 
-		Movie m = api.getMovie("550"); // Get the Movie with id=550
+		// Get the details for one specific movie
+
+		Movie m = api.getMovie("550"); // Get the movie with id=550
 
 		System.out.print("Title: ");
 		System.out.println(m.getTitle()); // Get the title
+		System.out.println(m.getTagline());
 		System.out.print("Release Date: ");
 		System.out.println(m.getReleaseDate());
 
 		System.out.println("\nProduction Companies:");
-		ProductionCompany[] companies = m.getProductionCompanies();
-		for (ProductionCompany company : companies) {
-			System.out.print(company.getName());
+		ProductionCompany[] companies = m.getProductionCompanies(); // Get the
+																	// production
+																	// companies
+		for (ProductionCompany company : companies) { // Iterate over the array
+			System.out.print(company.getName()); // Get the name of the company
 			System.out.println("(" + company.getId() + ")");
 		}
 
@@ -61,6 +66,12 @@ public class Demo {
 		for (Language language : languages) {
 			System.out.println(language.getLanguageName());
 			System.out.print("(" + language.getIsoLanguageCode() + ")");
+		}
+		System.out.println("\n\n\n\nTop Rated Movies:");
+		// Get a list of upcoming movies
+		Movie[] movies = api.getTopRatedMovies(1);
+		for (Movie movie : movies) {
+			System.out.println(movie.getTitle());
 		}
 
 	}
