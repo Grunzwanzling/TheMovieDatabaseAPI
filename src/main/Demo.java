@@ -39,7 +39,7 @@ public class Demo {
 		// Get the details for one specific movie
 
 		Movie m = api.getMovie("550"); // Get the movie with id=550
-
+		System.out.println(m.movie);
 		System.out.print("Title: ");
 		System.out.println(m.getTitle()); // Get the title
 		System.out.println(m.getTagline());
@@ -71,6 +71,7 @@ public class Demo {
 		// Get a list of upcoming movies
 		Movie[] movies = api.getTopRatedMovies(1);
 		for (Movie movie : movies) {
+			System.out.println(movie.movie);
 			System.out.println(movie.getTitle());
 		}
 

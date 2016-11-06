@@ -59,7 +59,9 @@ public class APIAccess {
 
 		Movie[] movie = new Movie[counter];
 		for (int i = 0; i < counter; i++) {
-			movie[i] = new Movie(map.get(i));
+			String id = map.get(i).substring(map.get(i).indexOf("\"id\":") + 5,
+					map.get(i).indexOf(",", map.get(i).indexOf("\"id\":") + 5));
+			movie[i] = this.getMovie(id);
 		}
 		return movie;
 	}
@@ -92,7 +94,9 @@ public class APIAccess {
 
 		Movie[] movie = new Movie[counter];
 		for (int i = 0; i < counter; i++) {
-			movie[i] = new Movie(map.get(i));
+			String id = map.get(i).substring(map.get(i).indexOf("\"id\":") + 5,
+					map.get(i).indexOf(",", map.get(i).indexOf("\"id\":") + 5));
+			movie[i] = this.getMovie(id);
 		}
 		return movie;
 	}
@@ -125,7 +129,9 @@ public class APIAccess {
 
 		Movie[] movie = new Movie[counter];
 		for (int i = 0; i < counter; i++) {
-			movie[i] = new Movie(map.get(i));
+			String id = map.get(i).substring(map.get(i).indexOf("\"id\":") + 5,
+					map.get(i).indexOf(",", map.get(i).indexOf("\"id\":") + 5));
+			movie[i] = this.getMovie(id);
 		}
 		return movie;
 	}
@@ -159,7 +165,9 @@ public class APIAccess {
 
 		Movie[] movie = new Movie[counter];
 		for (int i = 0; i < counter; i++) {
-			movie[i] = new Movie(map.get(i));
+			String id = map.get(i).substring(map.get(i).indexOf("\"id\":") + 5,
+					map.get(i).indexOf(",", map.get(i).indexOf("\"id\":") + 5));
+			movie[i] = this.getMovie(id);
 		}
 		return movie;
 	}
@@ -192,7 +200,9 @@ public class APIAccess {
 
 		Movie[] movie = new Movie[counter];
 		for (int i = 0; i < counter; i++) {
-			movie[i] = new Movie(map.get(i));
+			String id = map.get(i).substring(map.get(i).indexOf("\"id\":") + 5,
+					map.get(i).indexOf(",", map.get(i).indexOf("\"id\":") + 5));
+			movie[i] = this.getMovie(id);
 		}
 		return movie;
 	}
