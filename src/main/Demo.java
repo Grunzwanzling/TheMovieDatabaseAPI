@@ -39,9 +39,9 @@ public class Demo {
 		// Get the details for one specific movie
 
 		Movie m = api.getMovie("550"); // Get the movie with id=550
-		System.out.println(m.movie);
 		System.out.print("Title: ");
 		System.out.println(m.getTitle()); // Get the title
+		System.out.print("Tagline: ");
 		System.out.println(m.getTagline());
 		System.out.print("Release Date: ");
 		System.out.println(m.getReleaseDate());
@@ -52,7 +52,7 @@ public class Demo {
 																	// companies
 		for (ProductionCompany company : companies) { // Iterate over the array
 			System.out.print(company.getName()); // Get the name of the company
-			System.out.println("(" + company.getId() + ")");
+			System.out.println(" (" + company.getId() + ")");
 		}
 
 		System.out.println("\nProduction Countries:");
@@ -61,20 +61,20 @@ public class Demo {
 			System.out.print(country.getCountryName());
 			System.out.println("(" + country.getIsoCountryCode() + ")");
 		}
-		System.out.println("\nSpoken Languages:");
-		Language[] languages = m.getSpokenLanguages();
-		for (Language language : languages) {
-			System.out.println(language.getLanguageName());
-			System.out.print("(" + language.getIsoLanguageCode() + ")");
-		}
+
 		System.out.println("\n\n\n\nTop Rated Movies:");
-		// Get a list of upcoming movies
 		Movie[] movies = api.getTopRatedMovies(1);
 		for (Movie movie : movies) {
-			System.out.println(movie.movie);
 			System.out.println(movie.getTitle());
+			System.out.println(movie.getTagline() + "\n");
 		}
 
+		System.out.println("\n\n\n\nSearch for Movies with \"Star Wars\":");
+		movies = api.searchMovie("Star Wars", "en-EN", 1);
+		for (Movie movie : movies) {
+			System.out.println(movie.getTitle());
+			System.out.println(movie.getTagline() + "\n");
+		}
 	}
 
 }
