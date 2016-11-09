@@ -27,7 +27,7 @@ public class APIAccess {
 	/**
 	 * 
 	 * @param pages
-	 *            The amo
+	 *            The amount of pages that should be read
 	 * @return
 	 * @throws MalformedURLException
 	 * @throws IOException
@@ -67,6 +67,14 @@ public class APIAccess {
 		return movie;
 	}
 
+	/**
+	 * 
+	 * @param pages
+	 *            The amount of pages that should be read
+	 * @return
+	 * @throws MalformedURLException
+	 * @throws IOException
+	 */
 	public Movie[] getLatestMovies(int pages) throws MalformedURLException,
 			IOException {
 		HashMap<Integer, String> map = new HashMap<Integer, String>();
@@ -102,6 +110,14 @@ public class APIAccess {
 		return movie;
 	}
 
+	/**
+	 * 
+	 * @param pages
+	 *            The amount of pages that should be read
+	 * @return
+	 * @throws MalformedURLException
+	 * @throws IOException
+	 */
 	public Movie[] getPopularMovies(int pages) throws MalformedURLException,
 			IOException {
 		HashMap<Integer, String> map = new HashMap<Integer, String>();
@@ -137,6 +153,14 @@ public class APIAccess {
 		return movie;
 	}
 
+	/**
+	 * 
+	 * @param pages
+	 *            The amount of pages that should be read
+	 * @return
+	 * @throws MalformedURLException
+	 * @throws IOException
+	 */
 	public Movie[] getTopRatedMovies(int pages) throws MalformedURLException,
 			IOException {
 		HashMap<Integer, String> map = new HashMap<Integer, String>();
@@ -173,6 +197,14 @@ public class APIAccess {
 		return movie;
 	}
 
+	/**
+	 * 
+	 * @param pages
+	 *            The amount of pages that should be read
+	 * @return
+	 * @throws MalformedURLException
+	 * @throws IOException
+	 */
 	public Movie[] getUpcomingMovies(int pages) throws MalformedURLException,
 			IOException {
 		HashMap<Integer, String> map = new HashMap<Integer, String>();
@@ -208,6 +240,18 @@ public class APIAccess {
 		return movie;
 	}
 
+	/**
+	 * 
+	 * @param query
+	 *            The Query to search for
+	 * @param language
+	 *            The language of the results
+	 * @param pages
+	 *            The amount of pages to read
+	 * @return
+	 * @throws MalformedURLException
+	 * @throws IOException
+	 */
 	public Movie[] searchMovie(String query, String language, int pages)
 			throws MalformedURLException, IOException {
 		HashMap<Integer, String> map = new HashMap<Integer, String>();
@@ -245,6 +289,15 @@ public class APIAccess {
 		return movie;
 	}
 
+	/**
+	 * Get one specific movie by the ID
+	 * 
+	 * @param id
+	 *            The id to load
+	 * @return
+	 * @throws MalformedURLException
+	 * @throws IOException
+	 */
 	public Movie getMovie(String id) throws MalformedURLException, IOException {
 		String result = Essentials.sendHTTPRequest(new URL(
 				"http://api.themoviedb.org/3/movie/" + id + "?api_key="
