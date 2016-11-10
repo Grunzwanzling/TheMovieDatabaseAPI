@@ -13,7 +13,8 @@ import objects.Movie;
 import essentials.Essentials;
 
 /**
- * @author Maximilian
+ * @author <a href="http://grunzwanzling.me">Maximilian von Gaisberg
+ *         (Grunzwanzling)</a>
  *
  */
 public class APIAccess {
@@ -28,7 +29,7 @@ public class APIAccess {
 	 * 
 	 * @param pages
 	 *            The amount of pages that should be read
-	 * @return
+	 * @return The <code>Movie[]</code> with all the founf movies
 	 * @throws MalformedURLException
 	 * @throws IOException
 	 */
@@ -71,7 +72,7 @@ public class APIAccess {
 	 * 
 	 * @param pages
 	 *            The amount of pages that should be read
-	 * @return
+	 * @return The <code>Movie[]</code> with all the founf movies
 	 * @throws MalformedURLException
 	 * @throws IOException
 	 */
@@ -114,7 +115,7 @@ public class APIAccess {
 	 * 
 	 * @param pages
 	 *            The amount of pages that should be read
-	 * @return
+	 * @return The <code>Movie[]</code> with all the founf movies
 	 * @throws MalformedURLException
 	 * @throws IOException
 	 */
@@ -157,7 +158,7 @@ public class APIAccess {
 	 * 
 	 * @param pages
 	 *            The amount of pages that should be read
-	 * @return
+	 * @return The <code>Movie[]</code> with all the founf movies
 	 * @throws MalformedURLException
 	 * @throws IOException
 	 */
@@ -201,7 +202,7 @@ public class APIAccess {
 	 * 
 	 * @param pages
 	 *            The amount of pages that should be read
-	 * @return
+	 * @return The <code>Movie[]</code> with all the founf movies
 	 * @throws MalformedURLException
 	 * @throws IOException
 	 */
@@ -248,9 +249,9 @@ public class APIAccess {
 	 *            The language of the results
 	 * @param pages
 	 *            The amount of pages to read
-	 * @return
-	 * @throws MalformedURLException
-	 * @throws IOException
+	 * @return The <code>Movie[]</code> with all the founf movies
+	 * @throws MalformedURLException When a parameter is not in the right format
+	 * @throws IOException When the connetion could not be established
 	 */
 	public Movie[] searchMovie(String query, String language, int pages)
 			throws MalformedURLException, IOException {
@@ -294,9 +295,9 @@ public class APIAccess {
 	 * 
 	 * @param id
 	 *            The id to load
-	 * @return
-	 * @throws MalformedURLException
-	 * @throws IOException
+	 * @return The found movie
+	 * @throws MalformedURLException When a parameter is not in the right format
+	 * @throws IOException When the connetion could not be established
 	 */
 	public Movie getMovie(String id) throws MalformedURLException, IOException {
 		String result = Essentials.sendHTTPRequest(new URL(
