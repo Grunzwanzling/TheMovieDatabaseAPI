@@ -18,11 +18,9 @@ import objects.ProductionCompany;
 public class Demo {
 
 	/**
-	 * 
+	 * @author <a href="http://grunzwanzling.me">Maximilian von Gaisberg
+	 *         (Grunzwanzling)</a>
 	 */
-	public Demo() {
-		// TODO Auto-generated constructor stub
-	}
 
 	/**
 	 * @param args

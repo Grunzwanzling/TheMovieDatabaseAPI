@@ -13,6 +13,10 @@ import objects.Movie;
 import essentials.Essentials;
 
 /**
+ * 
+ * This represents the connection to the <a href="http://moviedb.org">The Movie
+ * Database</a> API
+ * 
  * @author <a href="http://grunzwanzling.me">Maximilian von Gaisberg
  *         (Grunzwanzling)</a>
  *
@@ -21,6 +25,13 @@ public class APIAccess {
 
 	String apiKey;
 
+	/**
+	 * Connect to the API
+	 * 
+	 * @param apiKey
+	 *            The API-key issued by <a href="http://moviedb.org">The Movie
+	 *            Database</a>
+	 */
 	public APIAccess(String apiKey) {
 		this.apiKey = apiKey;
 	}
@@ -31,7 +42,9 @@ public class APIAccess {
 	 *            The amount of pages that should be read
 	 * @return The <code>Movie[]</code> with all the founf movies
 	 * @throws MalformedURLException
+	 *             When a parameter is not in the right format
 	 * @throws IOException
+	 *             When the connection could not be established
 	 */
 	public Movie[] getNowPlayingMovies(int pages) throws MalformedURLException,
 			IOException {
@@ -74,7 +87,9 @@ public class APIAccess {
 	 *            The amount of pages that should be read
 	 * @return The <code>Movie[]</code> with all the founf movies
 	 * @throws MalformedURLException
+	 *             When a parameter is not in the right format
 	 * @throws IOException
+	 *             When the connection could not be established
 	 */
 	public Movie[] getLatestMovies(int pages) throws MalformedURLException,
 			IOException {
@@ -117,7 +132,9 @@ public class APIAccess {
 	 *            The amount of pages that should be read
 	 * @return The <code>Movie[]</code> with all the founf movies
 	 * @throws MalformedURLException
+	 *             When a parameter is not in the right format
 	 * @throws IOException
+	 *             When the connection could not be established
 	 */
 	public Movie[] getPopularMovies(int pages) throws MalformedURLException,
 			IOException {
@@ -160,7 +177,9 @@ public class APIAccess {
 	 *            The amount of pages that should be read
 	 * @return The <code>Movie[]</code> with all the founf movies
 	 * @throws MalformedURLException
+	 *             When a parameter is not in the right format
 	 * @throws IOException
+	 *             When the connection could not be established
 	 */
 	public Movie[] getTopRatedMovies(int pages) throws MalformedURLException,
 			IOException {
@@ -202,9 +221,11 @@ public class APIAccess {
 	 * 
 	 * @param pages
 	 *            The amount of pages that should be read
-	 * @return The <code>Movie[]</code> with all the founf movies
+	 * @return The <code>Movie[]</code> with all the found movies
 	 * @throws MalformedURLException
+	 *             When a parameter is not in the right format
 	 * @throws IOException
+	 *             When the connection could not be established
 	 */
 	public Movie[] getUpcomingMovies(int pages) throws MalformedURLException,
 			IOException {
@@ -249,9 +270,11 @@ public class APIAccess {
 	 *            The language of the results
 	 * @param pages
 	 *            The amount of pages to read
-	 * @return The <code>Movie[]</code> with all the founf movies
-	 * @throws MalformedURLException When a parameter is not in the right format
-	 * @throws IOException When the connetion could not be established
+	 * @return The <code>Movie[]</code> with all the found movies
+	 * @throws MalformedURLException
+	 *             When a parameter is not in the right format
+	 * @throws IOException
+	 *             When the connection could not be established
 	 */
 	public Movie[] searchMovie(String query, String language, int pages)
 			throws MalformedURLException, IOException {
@@ -294,10 +317,12 @@ public class APIAccess {
 	 * Get one specific movie by the ID
 	 * 
 	 * @param id
-	 *            The id to load
+	 *            The id of the movie to load
 	 * @return The found movie
-	 * @throws MalformedURLException When a parameter is not in the right format
-	 * @throws IOException When the connetion could not be established
+	 * @throws MalformedURLException
+	 *             When a parameter is not in the right format
+	 * @throws IOException
+	 *             When the connection could not be established
 	 */
 	public Movie getMovie(String id) throws MalformedURLException, IOException {
 		String result = Essentials.sendHTTPRequest(new URL(
