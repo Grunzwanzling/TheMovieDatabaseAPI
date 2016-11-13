@@ -1,6 +1,3 @@
-/**
- * 
- */
 package main;
 
 import java.io.IOException;
@@ -19,6 +16,8 @@ import essentials.Essentials;
  * 
  * @author <a href="http://grunzwanzling.me">Maximilian von Gaisberg
  *         (Grunzwanzling)</a>
+ * 
+ * @see <a href="http://grunzwanzling.me/TheMovieDatabaseAPI">javadoc</a>
  *
  */
 public class APIAccess {
