@@ -22,7 +22,7 @@ import essentials.Essentials;
  */
 public class APIAccess {
 
-	String apiKey;
+	private String apiKey;
 
 	/**
 	 * Connect to the API
@@ -275,6 +275,7 @@ public class APIAccess {
 	 * @throws IOException
 	 *             When the connection could not be established
 	 */
+	@SuppressWarnings("deprecation")
 	public Movie[] searchMovie(String query, String language, int pages)
 			throws MalformedURLException, IOException {
 		HashMap<Integer, String> map = new HashMap<Integer, String>();
@@ -328,17 +329,19 @@ public class APIAccess {
 				"http://api.themoviedb.org/3/movie/" + id + "?api_key="
 						+ apiKey));
 
-		String content = "a";
-		int start = 0;
-		int stop = 0;
-		try {
-			start = result.indexOf("\"poster_path\"", stop);
-			stop = 20 + result.indexOf("\"vote_average\"", start);
-			content = result.substring(start, stop);
-		} catch (StringIndexOutOfBoundsException e) {
-			return null;
-		}
-		return new Movie(content);
+		// String content = "a";
+		// int start = 0;
+		// int stop = 0;
+		// try {
+		// start = result.indexOf("\"poster_path\"", stop);
+		// stop = 20 + result.indexOf("\"vote_average\"", start);
+		// content = result.substring(start, stop);
+		// } catch (StringIndexOutOfBoundsException e) {
+		// return null;
+		// }
+		// return new Movie(content);
+
+		return new Movie(result);
 
 	}
 

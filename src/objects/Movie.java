@@ -14,10 +14,10 @@ import java.util.ArrayList;
  */
 public class Movie {
 
-	public String movie;
+	private String movie;
 
 	/**
-	 * Create a <code>Movie</code> from the JSON API-return Don't use it, it is
+	 * Create a <code>Movie</code> from the JSON API return Don't use it, it is
 	 * just for internal use!
 	 * 
 	 * @param content
@@ -243,5 +243,14 @@ public class Movie {
 		int stop = movie.indexOf("\"", start);
 		return Float.parseFloat(movie.substring(start, stop));
 
+	}
+
+	/**
+	 * Returns the exact response from the Web-API
+	 * 
+	 * @return The response
+	 */
+	public String getAPIResponse() {
+		return movie;
 	}
 }

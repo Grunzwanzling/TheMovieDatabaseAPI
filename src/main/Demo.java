@@ -7,13 +7,16 @@ import java.io.IOException;
 import java.net.MalformedURLException;
 
 import objects.Country;
-import objects.Language;
 import objects.Movie;
 import objects.ProductionCompany;
 
 /**
- * @author Maximilian
+ * A demonstration for TheMovieDatabaseAPI
+ * 
+ * @author <a href="http://grunzwanzling.me">Maximilian von Gaisberg
+ *         (Grunzwanzling)</a>
  *
+ * @see <a href="http://grunzwanzling.me/TheMovieDatabaseAPI">javadoc</a>
  */
 public class Demo {
 
